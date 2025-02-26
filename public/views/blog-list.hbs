@@ -1,0 +1,62 @@
+<section class="blog-header">
+    <div class="container">
+        <h1>{{#if currentTag}}{{currentTag}}{{else}}The Blog{{/if}}</h1>
+        <p>{{#if currentTag}}Exploring articles about {{currentTag}}{{else}}Thoughts on astronomy, history, programming, and nature{{/if}}</p>
+    </div>
+</section>
+
+<section class="blog-list">
+    <div class="container">
+        {{#if posts.length}}
+            <div class="posts-grid">
+                {{#each posts}}
+                <article class="post-card">
+                    {{#if coverImage}}
+                    <div class="post-image" style="background-image: url('{{coverImage}}');">
+                        <div class="post-overlay"></div>
+                    </div>
+                    {{else}}
+                    <div class="post-image no-image">
+                        <div class="post-overlay"></div>
+                    </div>
+                    {{/if}}
+                    <div class="post-content">
+                        <h2 class="post-title"><a href="/blog/post/{{slug}}">{{title}}</a></h2>
+                        <div class="post-meta">
+                            <span class="post-date">{{formatDate date}}</span>
+                            {{#if readingTime}}<span class="reading-time">{{readingTime}}</span>{{/if}}
+                        </div>
+                        <p class="post-excerpt">{{excerpt}}</p>
+                        {{#if tags.length}}
+                        <div class="post-tags">
+                            {{#each tags}}
+                            <a href="/blog/tag/{{this}}" class="tag">{{this}}</a>
+                            {{/each}}
+                        </div>
+                        {{/if}}
+                        <a href="/blog/post/{{slug}}" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                {{/each}}
+            </div>
+        {{else}}
+            <div class="no-posts">
+                <p>No posts found.</p>
+                {{#if currentTag}}
+                <a href="/blog" class="btn-secondary">View All Posts</a>
+                {{/if}}
+            </div>
+        {{/if}}
+    </div>
+</section>
+
+{{#unless currentTag}}
+<section class="all-tags">
+    <div class="container">
+        <h2 class="section-title">Browse by Topic</h2>
+        <div class="tags-cloud">
+            <a href="/blog/tags" class="btn-tertiary">View All Topics</a>
+        </div>
+    </div>
+</section>
+{{/unless}}

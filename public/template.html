@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} | Cosmic Insights</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div>
+          <h1 class="site-title">Cosmic Insights</h1>
+          <p class="site-description">Exploring Astronomy, History, Technology, and Nature</p>
+        </div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/categories/astronomy">Astronomy</a></li>
+          <li><a href="/categories/history">History</a></li>
+          <li><a href="/categories/tech">Technology</a></li>
+          <li><a href="/categories/nature">Nature</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {{content}}
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About</h3>
+          <p>Cosmic Insights is a personal blog exploring the wonders of astronomy, the rich history of India, advances in computer programming, big data in astronomical research, and the beauty of nature and wildlife.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Categories</h3>
+          <ul class="footer-links">
+            <li><a href="/categories/astronomy">Astronomy Research</a></li>
+            <li><a href="/categories/history">Indian History</a></li>
+            <li><a href="/categories/tech">Programming & Technology</a></li>
+            <li><a href="/categories/data">Big Data in Astronomy</a></li>
+            <li><a href="/categories/nature">Nature & Wildlife</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <ul class="footer-links">
+            <li><a href="https://twitter.com/cosmicinsights">Twitter</a></li>
+            <li><a href="https://github.com/yogeshuser">GitHub</a></li>
+            <li><a href="mailto:info@cosmicinsights.com">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; ${new Date().getFullYear()} Cosmic Insights. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize syntax highlighting
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightElement(block);
+      });
+    });
+  </script>
+</body>
+</html>

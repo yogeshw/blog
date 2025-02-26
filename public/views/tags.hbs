@@ -1,0 +1,26 @@
+<section class="tags-header">
+    <div class="container">
+        <h1>Topics</h1>
+        <p>Browse all topics covered on this blog</p>
+    </div>
+</section>
+
+<section class="tags-grid">
+    <div class="container">
+        {{#if tags.length}}
+            <div class="tags-list">
+                {{#each tags}}
+                <a href="/blog/tag/{{this}}" class="tag-card">
+                    <h3>{{this}}</h3>
+                    <span class="tag-arrow">→</span>
+                </a>
+                {{/each}}
+            </div>
+        {{else}}
+            <div class="no-tags">
+                <p>No topics found.</p>
+                <a href="/blog" class="btn-secondary">View All Posts</a>
+            </div>
+        {{/if}}
+    </div>
+</section>
