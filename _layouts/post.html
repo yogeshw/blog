@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="post">
+    <header class="post-header">
+        {% if page.coverImage %}
+        <div class="post-cover">
+            <img src="{{ page.coverImage | relative_url }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%B %-d, %Y" }}
+            </time>
+            {% if page.tags %}
+            <span class="post-tags">
+                {% for tag in page.tags %}
+                <a href="{{ '/tags/' | relative_url }}#{{ tag }}" class="tag">{{ tag }}</a>
+                {% endfor %}
+            </span>
+            {% endif %}
+            {% if page.readingTime %}
+            <span class="reading-time">{{ page.readingTime }}</span>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+</article>

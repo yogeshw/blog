@@ -1,0 +1,22 @@
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="{{ '/' | relative_url }}">
+                <span class="logo-text">Random Ramblings through the Universe</span>
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+                <li><a href="{{ '/blog' | relative_url }}" class="nav-link">Blog</a></li>
+                <li><a href="{{ '/tags' | relative_url }}" class="nav-link">Topics</a></li>
+                <li><a href="{{ '/about' | relative_url }}" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
